@@ -10,25 +10,24 @@ import UIKit
 
 class AgentDetailViewController: UIViewController {
     
-    @IBOutlet weak var CoverName: UILabel!
-    @IBOutlet weak var RealName: UILabel!
-    @IBOutlet weak var AccessLevel: UILabel!
+    @IBOutlet weak var coverNameLabel: UILabel!
+    @IBOutlet weak var realNameLabel: UILabel!
+    @IBOutlet weak var accessLevelLabel: UILabel!
+    
+    var agent: (coverName: String, realName: String, accesslevel: Int, compromised: Bool)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = agents.name
+        coverNameLabel.text = "Cover Name \(agent.coverName)"
+        realNameLabel.text = "Real Name \(agent.realName)"
+        accessLevelLabel.text = "Access Level \(agents.accessLevel)"
+        if agent.compromised == true {
+            view.backgroundColor = .red
+        }
+        
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

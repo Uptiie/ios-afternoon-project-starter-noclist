@@ -19,9 +19,14 @@ class NOCListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNOCList()
+        title = "Agents UnderCover"
     }
     
-    // MARK: - Table view data source 
+    // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "\(compromiseCount()) agents compromised"
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return agents.count
@@ -29,12 +34,15 @@ class NOCListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoverNameCell", for: indexPath)
-        let CoverName = agents[indexpath.row]
-        cell.textLabel.text = agentsItem.name
-        cell.detailTextLabel.text
+        let NOCagents = agents[indexPath.row]
+        cell.textLabel?.text = NOCagents.coverName
+        cell.detailTextLabel?.text = NOCagents.realName
         
-        
-        
+        if NOCagents.compromised == true {
+            cell.backgroundColor = UIColor(hue: 0, saturation: 0.4, brightness: 0.9, alpha: 1.0)
+        } else {
+            cell.backgroundColor = .white
+        }
         
         return cell
     }
@@ -42,7 +50,10 @@ class NOCListTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let selectedIndexPath = tableView.indexPathForSelectedRow!
+        let selectedAgent = agents[selectedIndexPath.row]
+        let agentDetailVC = segue.destination as! AgentDetailViewController
+        agentDetailVC.agent = selectedAgent 
     }
     
     // MARK: - Private
@@ -64,12 +75,12 @@ class NOCListTableViewController: UITableViewController {
         agents.append(contentsOf: [ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank])
     }
     
-    private func compromiseCount() -> Int {
-        var count = 0
+    private func compromisedCount() -> Int {
+        var compromisedCount = 0
         for agent in agents {
-            if compromised == true
+            if agent.compromised == true
             count += 1
         }
+        return "\(compromiseCount()) agents compromised"
     }
-    return
 }
