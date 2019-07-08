@@ -14,15 +14,15 @@ class AgentDetailViewController: UIViewController {
     @IBOutlet weak var realNameLabel: UILabel!
     @IBOutlet weak var accessLevelLabel: UILabel!
     
-    var agent: (coverName: String, realName: String, accesslevel: Int, compromised: Bool)!
+    var agent: (coverName: String, realName: String, accessLevel: Int, compromised: Bool)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = agents.name
+        title = "agent"
         coverNameLabel.text = "Cover Name \(agent.coverName)"
         realNameLabel.text = "Real Name \(agent.realName)"
-        accessLevelLabel.text = "Access Level \(agents.accessLevel)"
+        accessLevelLabel.text = "Access Level \(agent.accessLevel)"
         if agent.compromised == true {
             view.backgroundColor = .red
         }

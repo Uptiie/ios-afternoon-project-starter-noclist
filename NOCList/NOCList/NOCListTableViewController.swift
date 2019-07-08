@@ -10,7 +10,7 @@ import UIKit
 
 class NOCListTableViewController: UITableViewController {
     
-    private var agents: [(coverName: String, realName: String, accesslevel: Int, compromised: Bool)] = []
+    private var agents: [(coverName: String, realName: String, accessLevel: Int, compromised: Bool)] = []
 
     // MARK: - Properties
     
@@ -25,7 +25,7 @@ class NOCListTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "\(compromiseCount()) agents compromised"
+        return "\(compromisedCount()) agents compromised"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,13 +53,12 @@ class NOCListTableViewController: UITableViewController {
         let selectedIndexPath = tableView.indexPathForSelectedRow!
         let selectedAgent = agents[selectedIndexPath.row]
         let agentDetailVC = segue.destination as! AgentDetailViewController
-        agentDetailVC.agent = selectedAgent 
+        agentDetailVC.agent = selectedAgent
     }
     
     // MARK: - Private
     
-    private func loadNOCList()
-    {
+    private func loadNOCList() {
         let ethan = (coverName: "Ethan Hunt", realName: "Tom Cruise", accessLevel: 8, compromised: true)
         let jim = (coverName: "Jim Phelps", realName: "Jon Voight", accessLevel: 9, compromised: false)
         let claire = (coverName: "Claire Phelps", realName: "Emmanuelle Beart", accessLevel: 5, compromised: false)
@@ -72,15 +71,17 @@ class NOCListTableViewController: UITableViewController {
         let jack = (coverName: "Jack Harmon", realName: "Emilio Estevez", accessLevel: 6, compromised: true)
         let frank = (coverName: "Frank Barnes", realName: "Dale Dye", accessLevel: 9, compromised: false)
         
-        agents.append(contentsOf: [ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank])
+        agents = [ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank]
     }
     
-    private func compromisedCount() -> Int {
+    private func compromisedCount() -> String {
         var compromisedCount = 0
         for agent in agents {
-            if agent.compromised == true
-            count += 1
+            if agent.compromised == true {
+                compromisedCount += 1
+            }
         }
-        return "\(compromiseCount()) agents compromised"
+        
+        return "\(compromisedCount) agents compromised"
     }
 }
