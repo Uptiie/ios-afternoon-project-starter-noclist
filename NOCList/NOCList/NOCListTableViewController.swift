@@ -82,6 +82,6 @@ class NOCListTableViewController: UITableViewController {
             }
         }
         
-        return "\(compromisedCount) agents compromised"
+        return "\(compromisedCount)"
     }
 }

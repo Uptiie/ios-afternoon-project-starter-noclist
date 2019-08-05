@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63EA997E22D3EEB900833089 /* NOCListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA997D22D3EEB900833089 /* NOCListTableViewCell.swift */; };
 		CEC31CC8229759CC007F6F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC31CC7229759CC007F6F4A /* AppDelegate.swift */; };
 		CEC31CCD229759CC007F6F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC31CCB229759CC007F6F4A /* Main.storyboard */; };
 		CEC31CCF229759CC007F6F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC31CCE229759CC007F6F4A /* Assets.xcassets */; };
@@ -17,7 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63EA997D22D3EEB900833089 /* NOCListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOCListTableViewCell.swift; sourceTree = "<group>"; };
 		CEC31CC4229759CC007F6F4A /* NOCList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOCList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC31CC7229759CC007F6F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC31CCC229759CC007F6F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC31CC7229759CC007F6F4A /* AppDelegate.swift */,
-				63EA997D22D3EEB900833089 /* NOCListTableViewCell.swift */,
 				CEC31CD9229759FA007F6F4A /* NOCListTableViewController.swift */,
 				FF98C6EE229F3AA900E805A6 /* AgentDetailViewController.swift */,
 				CEC31CCB229759CC007F6F4A /* Main.storyboard */,
@@ -141,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EA997E22D3EEB900833089 /* NOCListTableViewCell.swift in Sources */,
 				CEC31CC8229759CC007F6F4A /* AppDelegate.swift in Sources */,
 				FF98C6EF229F3AA900E805A6 /* AgentDetailViewController.swift in Sources */,
 				CEC31CDA229759FA007F6F4A /* NOCListTableViewController.swift in Sources */,
